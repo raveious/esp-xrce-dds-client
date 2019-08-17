@@ -1,0 +1,88 @@
+menu "DDS - XRCE Client"
+
+config PROFILE_CREATE_ENTITIES_REF
+    bool "Enable creation of entries from references."
+    default y 
+
+config PROFILE_CREATE_ENTITIES_XML
+    bool "Enable creation of entries from XML."
+    default y
+
+config PROFILE_READ_ACCESS
+    bool "Enable profile read access."
+    default y
+
+config PROFILE_WRITE_ACCESS
+    bool "Enable profile write access."
+    default y
+
+config PROFILE_DISCOVERY
+    bool "Enable profile discovery."
+    default y
+
+config PROFILE_UDP_TRANSPORT
+    bool "Enable UDP transport."
+    default y
+
+config PROFILE_TCP_TRANSPORT
+    bool "Enable TCP transport."
+    default y
+
+config PROFILE_SERIAL_TRANSPORT
+    bool "Enable SERIAL transport."
+    default y
+
+config VERBOSE_MESSAGE
+    bool "Enable verbose message logging"
+    default n
+
+config VERBOSE_SERIALIZATION
+    bool "Enable verbose serialization logging"
+    default n
+
+config MAX_OUTPUT_BEST_EFFORT_STREAMS
+    int "Max number of Best Effort output streams."
+    default "1"
+
+config MAX_OUTPUT_RELIABLE_STREAMS
+    int "Max number of Reliable output streams."
+    default "1"
+
+config MAX_INPUT_BEST_EFFORT_STREAMS
+    int "Max number of Best Effort input streams."
+    default "1"
+
+config MAX_INPUT_RELIABLE_STREAMS
+    int "Max number of Reliable input streams."
+    default "1"
+
+menu "Session Configurations"
+config MAX_SESSION_CONNECTION_ATTEMPTS
+    int "Max number of connection attempts for a session."
+    default "12"
+
+config MIN_SESSION_CONNECTION_INTERVAL
+    int "Session connection re-attempt cool down (in seconds)."
+    default "1"
+
+config MIN_HEARTBEAT_TIME_INTERVAL
+    int "Interval between connection heartbeats (in seconds)."
+    default "1"
+endmenu
+
+menu "Transport MTU"
+config UDP_TRANSPORT_MTU
+    int "MTU value for when using UDP as a transport."
+    default "512"
+
+config TCP_TRANSPORT_MTU
+    int "MTU value for when using TCP as a transport."
+    default "512"
+
+
+config SERIAL_TRANSPORT_MTU
+    int "MTU value for when using Serial as a transport."
+    default "512"
+endmenu
+
+endmenu
